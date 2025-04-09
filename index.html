@@ -1,12 +1,28 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>HTML Elements Reference</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minecraft Launcher in Browser</title>
+    <script src="https://cheerpj.app/loader.js"></script>
 </head>
 <body>
+    <h1>Run Minecraft via Browser</h1>
+    <button onclick="startMinecraft()">Start Minecraft</button>
+    <div id="minecraftContainer"></div>
+    
+    <script>
+        function startMinecraft() {
+            let cheerpjContainer = document.getElementById("minecraftContainer");
+            cheerpjContainer.innerHTML = "<h2>Loading Minecraft...</h2>";
+            let jarFilePath = "C:\website\.github.io\hmcl.jar"; // Path to your .jar file
+            let appletCode = "org.jackhuang.hmcl.Main"; // Main class of HMCL
+            let width = 800;
+            let height = 600;
 
-<h1>This is a heading</h1>
-<p>This is a paragraph.</p>
-
+            // Initialize CheerpJ to load and run the .jar
+            cheerpjContainer.innerHTML = `<applet code="${appletCode}" archive="${jarFilePath}" width="${width}" height="${height}"></applet>`;
+        }
+    </script>
 </body>
 </html>
